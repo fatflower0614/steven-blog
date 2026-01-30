@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ if eq .Kind "section" }}
+    <nav class="categories">
+        <a href="{{ "/" | relURL }}" class="category-link {{ if eq .CurrentSection.Title "全部" }}active{{ end }}">全部</a>
+        {{ range site.Taxonomies.categories }}
+            <a href="{{ "/categories/" | relURL }}{{ .Page.Title | urlize }}/" class="category-link {{ if eq $.CurrentSection.Title .Page.Title }}active{{ end }}">
+                {{ .Page.Title }}
+            </a>
+        {{ end }}
+    </nav>
+{{ end }}
+
+{{ if .Title }}
+    <h1 style="margin-bottom: 2rem; color: var(--accent-color);">{{ .Title }}</h1>
+{{ end }}
+
+{{ range .Pages.ByDate.Reverse }}
+    <article class="post-item">
+        <time class="post-date">{{ .Date.Format "2006年01月02日" }}</time>
+        <h2 class="post-title">
+            <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+        </h2>
+        {{ if .Params.categories }}
+        <div class="post-categories">
+            {{ range .Params.categories }}
+                <span class="post-category">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </article>
+{{ end }}
+{{ end }}

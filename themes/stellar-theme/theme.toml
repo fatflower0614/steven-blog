@@ -1,0 +1,12 @@
+name = "星辰大海主题"
+license = "MIT"
+licenselink = "https://github.com/yourusername/steven-blog/blob/main/LICENSE"
+description = "猫低温是Steven的星辰大海 - 极简个人博客主题"
+homepage = "https://github.com/yourusername/steven-blog"
+tags = ["blog", "minimal", "personal"]
+features = ["responsive", "dark-mode", "categories"]
+min_version = "0.155.0"
+
+[author]
+  name = "猫低温 (Steven)"
+  homepage = "https://steven.blog"

@@ -1,0 +1,28 @@
+baseURL: https://steven-blog.example.org/
+languageCode: zh-cn
+title: 猫低温是Steven的星辰大海
+theme: stellar-theme
+
+params:
+  author:
+    name: 猫低温 (Steven)
+    email: steven@example.com
+  subtitle: 游戏 · AI · Crypto · IP · 上市公司
+
+taxonomies:
+  category: categories
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    lineNos: false
+    style: monokai
+
+menu:
+  main:
+    - identifier: home
+      name: 首页
+      url: /
+      weight: 1
