@@ -1,7 +1,7 @@
 {{ define "main" }}
-{{ if eq .Kind "section" }}
+{{ if or .IsHome (eq .Kind "section") }}
     <nav class="categories">
-        <a href="{{ "/" | relURL }}" class="category-link {{ if eq .CurrentSection.Title "全部" }}active{{ end }}">全部</a>
+        <a href="{{ "/" | relURL }}" class="category-link {{ if or .IsHome (eq .CurrentSection.Title "全部") }}active{{ end }}">全部</a>
         {{ range site.Taxonomies.categories }}
             <a href="{{ "/categories/" | relURL }}{{ .Page.Title | urlize }}/" class="category-link {{ if eq $.CurrentSection.Title .Page.Title }}active{{ end }}">
                 {{ .Page.Title }}
