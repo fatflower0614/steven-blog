@@ -159,6 +159,18 @@ header {
   transform: translateY(-2px);
 }
 
+/* 深色模式下顶部分类导航：默认白色文字 */
+.dark .category-link {
+  color: white;
+}
+
+/* 深色模式下顶部分类导航：只有激活/悬停的标签变浅蓝 */
+.dark .category-link:hover,
+.dark .category-link.active {
+  background: #5da8e2;
+  color: white;
+}
+
 /* 文章列表 */
 .posts-list {
   list-style: none;
@@ -226,6 +238,12 @@ header {
 
 .post-category:hover {
   opacity: 0.8;
+}
+
+/* 深色模式下文章底部标签：浅蓝背景+白色文字 */
+.dark .post-category {
+  background: #5da8e2;
+  color: white;
 }
 
 /* 文章详情页 */
