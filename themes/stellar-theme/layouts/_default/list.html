@@ -2,11 +2,11 @@
 {{ if or .IsHome (eq .Kind "section") }}
     <nav class="categories">
         <a href="{{ "/" | relURL }}" class="category-link {{ if or .IsHome (eq .CurrentSection.Title "全部") }}active{{ end }}">全部</a>
-        {{ range site.Taxonomies.categories }}
-            <a href="{{ "/categories/" | relURL }}{{ .Page.Title | urlize }}/" class="category-link {{ if eq $.CurrentSection.Title .Page.Title }}active{{ end }}">
-                {{ .Page.Title }}
-            </a>
-        {{ end }}
+        <a href="{{ "/categories/" | relURL }}游戏/" class="category-link {{ if eq $.CurrentSection.Title "游戏" }}active{{ end }}">游戏</a>
+        <a href="{{ "/categories/" | relURL }}ai/" class="category-link {{ if eq $.CurrentSection.Title "AI" }}active{{ end }}">AI</a>
+        <a href="{{ "/categories/" | relURL }}crypto/" class="category-link {{ if eq $.CurrentSection.Title "Crypto" }}active{{ end }}">Crypto</a>
+        <a href="{{ "/categories/" | relURL }}ip/" class="category-link {{ if eq $.CurrentSection.Title "IP" }}active{{ end }}">IP</a>
+        <a href="{{ "/categories/" | relURL }}其他/" class="category-link {{ if eq $.CurrentSection.Title "其他" }}active{{ end }}">其他</a>
     </nav>
 {{ end }}
 
